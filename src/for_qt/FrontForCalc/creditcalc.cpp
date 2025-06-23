@@ -50,15 +50,12 @@ void creditcalc::calc_numbers() {
         ui->graph->clearGraphs();
         int month = 1;
         QVector<double> x((int)term), y((int)term);
-        // QTextStream(stdout) << QString::number((int)term);
         double total_interest = 0 ;
-        // y[0] = 0;
         for(; month <= (int)term; month++)
         {
             x[month - 1] = month;
             y[month - 1] = diff_monthly_payment(principal, term, interest_rate, month);
-            // QTextStream(stdout) << QString::number(y[month - 1]) << "\n";
-            total_interest = diff_total_interest(total_interest, y[month - 1]); // arr[month]
+            total_interest = diff_total_interest(total_interest, y[month - 1]);
         }
         double total_payment = total_interest;
         total_interest -= principal;
@@ -92,22 +89,9 @@ void creditcalc::calc_numbers() {
 
         ui->graph->yAxis->setRange(minY, maxY);//Для оси Oy
 
-        // QTextStream(stdout) << "5\n";
         //И перерисуем график на нашем widget
         ui->graph->replot();
         ui->graph->show();
     }
 }
 
-// void MainWindow::updateFont()
-// {
-//     QFont currentFont = ui->textEdit->currentFont();
-
-//     currentFont->setFamily(ui->fontComboBox->currentText());
-//     currentFont->setItalic(ui->italicCheckBox->isChecked());
-//     currentFont->setPointSize(ui->sizeSpinBox->value());
-
-//     // устанавливаем остальные свойства
-
-//     textEdit->setCurrentFont(currentFont);
-// }
