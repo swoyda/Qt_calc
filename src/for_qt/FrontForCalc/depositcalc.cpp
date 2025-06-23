@@ -21,9 +21,7 @@ void depositcalc::calc_numbers() {
     QString data_input_str = ui->data_show->text();
     QString percent_input_str = ui->percent_show->text();
 
-//    double principal = input_str.toDouble();
     double term = data_input_str.toDouble();
-//    double interest_rate = percent_input_str.toDouble();
 
     std::string std_input_str = type.toStdString();
     std::string std_data_input_str = data.toStdString();
