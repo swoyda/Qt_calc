@@ -8,7 +8,6 @@ s21_stack_t* s21_initialise_str_stack(s21_stack_t* top) {
   if (top == NULL) {
     return NULL;
   }
-  // strcat(top->tokens, "");
   top->link = NULL;
   return top;
 }
@@ -26,8 +25,6 @@ s21_stack_t* s21_pop_tok(s21_stack_t* top) {
   } else {
     s21_stack_t* temp;
     temp = top;
-    // free(top -> tokens);
-    // top -> tokens = NULL;
 
     if (top->link == NULL) {
       free(top);
