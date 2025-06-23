@@ -2,8 +2,8 @@
 #define S21_STACK
 
 #include <stdlib.h>
-#include <string.h>
-// добавить только те библиотеки которые нужны
+#include <string.h
+
 #ifndef INPUT_ERROR
 #define INPUT_ERROR 1
 #define OK 0
@@ -11,10 +11,7 @@
 #endif  // INPUT_ERROR
 typedef struct s21_stack_tokens s21_stack_t;
 typedef struct s21_stack_num s21_num_stack_t;
-// typedef struct  {
-//   s21_num_stack_t *num_part;
-//   s21_stack_t *str_part;
-// }stack_sruct;
+
 struct s21_stack_num {
   double value;
   s21_num_stack_t* link;
