@@ -1,5 +1,4 @@
 #include "settingsgraph.h"
-// #include "mainwindow.h"
 #include "ui_settingsgraph.h"
 
 settingsGraph::settingsGraph(QWidget *parent)
@@ -7,12 +6,7 @@ settingsGraph::settingsGraph(QWidget *parent)
     , ui(new Ui::settingsGraph)
 {
     ui->setupUi(this);
-    // QPushButton *sendButton = new QPushButton(compile_graph(), this);
     connect(ui->startButton, &QPushButton::clicked, this, &settingsGraph::compile_graph);
-    // connect(mainWindow, &MainWindow::sendString, this, &ReceiverWindow::receiveString);
-    // settingsGraph *senderWindow = new MainWindow;
-    // connect(ui->startButton, SIGNAL(clicked()), this, &MainWindow::digits_numbers());
-    // connect(ui->startButton,SIGNAL(clicked()),this,SLOT(compile_graph()));
     connect(ui->defaultButton,SIGNAL(clicked()),this,SLOT(default_graph()));
     connect(ui->clearButton,SIGNAL(clicked()),this,SLOT(clear_graph()));
 }
@@ -58,7 +52,6 @@ void settingsGraph::default_graph() {
 }
 
 void settingsGraph::compile_graph() {
-    // connect(MainWindow, &MainWindow::sendString, this, &settingsGraph::receiveString);
     double x =  ui->x_show->text().toDouble();
     double minus_x =  ui->minus_x_show->text().toDouble();
     double y =  ui->y_show->text().toDouble();
