@@ -24,7 +24,6 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 signals:
     void sendData(QString *data[6]);
-    // void sendString(const char &str);
 public:
     MainWindow(settingsGraph *settingsGraph, QWidget *parent = nullptr);
     ~MainWindow();
@@ -36,7 +35,6 @@ private:
     depositcalc *DepositCalc;
     Ui::MainWindow *ui;
 private slots:
-    // void graphs(double x, double minus_x, double y, double minus_y, double steps);
     void digits_numbers();
     void on_GSettingsButton_clicked();
     void open_credit_calc();
